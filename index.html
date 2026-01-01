@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Open Graph / Preview -->
   <meta property="og:image" content="thumbnail.png">
   <meta property="og:title" content="Tia Moncy | Portfolio">
-  <meta property="og:description" content="BCA student building web projects and learning programming.">
+  <meta property="og:description" content="BCA student building real-world web projects and learning programming.">
 
   <title>Tia Moncy | Portfolio</title>
 
@@ -44,7 +46,6 @@
       border-bottom: 2px solid pink;
       padding-bottom: 5px;
       font-size: 1.5rem;
-      margin-top: 0;
       margin-bottom: 20px;
       color: pink;
     }
@@ -53,7 +54,7 @@
       list-style-type: square;
       padding-left: 20px;
       text-align: left;
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto 20px auto;
     }
 
@@ -61,7 +62,7 @@
       background: #111;
       padding: 20px;
       border-radius: 8px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     a {
@@ -81,6 +82,10 @@
       color: #e5e5e5;
     }
 
+    img {
+      margin-top: 20px;
+      border-radius: 50%;
+    }
   </style>
 </head>
 
@@ -91,7 +96,6 @@
     <h1>Hi, I’m Tia Moncy 👋</h1>
     <p>BCA 2nd Year Student | Rajagiri College of Social Sciences</p>
     <img src="mypic.png" alt="Tia Moncy" width="200">
-
   </header>
 
   <!-- ABOUT -->
@@ -102,7 +106,7 @@
         I am a BCA second-year student with a growing interest in applying
         computer science concepts to real-world problems.
         I am currently building my foundation in programming, web development,
-        and problem-solving while exploring projects.
+        and problem-solving through hands-on projects.
       </p>
     </div>
   </section>
@@ -116,6 +120,7 @@
         <li>Python</li>
         <li>Java (Basics)</li>
         <li>HTML, CSS, JavaScript</li>
+        <li>React (Basics)</li>
         <li>Git & GitHub</li>
       </ul>
     </div>
@@ -128,8 +133,8 @@
       <ul>
         <li>Data Structures & Algorithms</li>
         <li>Web Development</li>
-        <li>Real-World applications using Python</li>
         <li>Backend fundamentals</li>
+        <li>Real-world applications using Python</li>
       </ul>
     </div>
   </section>
@@ -137,35 +142,76 @@
   <!-- PROJECTS -->
   <section>
     <h2>Projects</h2>
+
+    <!-- Project 1 -->
     <div class="card">
-     <!-- PROJECTS -->
-<section>
-  <h2>Projects</h2>
+      <h3>Endocrine System Educational Website</h3>
+      <p>
+        A frontend educational web project built using
+        <strong>HTML, CSS, and React</strong>,
+        focused on explaining the human endocrine system in a clear and
+        student-friendly way.
+      </p>
 
-  <div class="card">
-    <h3>Endocrine System Educational Website</h3>
-    <p>
-      A frontend educational web project built using <strong>HTML, CSS, and React</strong>,
-      focused on explaining the human endocrine system in a clear and structured way.
-    </p>
+      <ul>
+        <li>Topic-wise pages for major endocrine glands</li>
+        <li>Clean and structured UI for easy learning</li>
+        <li>Interactive quiz feature for self-assessment</li>
+      </ul>
 
-    <ul>
-      <li>Topic-wise pages for major endocrine glands</li>
-      <li>Clean and student-friendly UI using custom CSS</li>
-      <li>Interactive quiz feature for self-assessment</li>
-    </ul>
-
-    <p>
-      <strong>Status:</strong> GitHub repository : https://github.com/tia-345/endocrine-react-app
-      
-      <strong>Status:</strong> Netlify : https://695530919980f4b106c4df2d--endocrine-react-app.netlify.app/
-.
-    </p>
-  </div>
-
-</section>
-
+      <p>
+        <strong>GitHub:</strong>
+        <a href="https://github.com/tia-345/endocrine-react-app" target="_blank">
+          Repository Link
+        </a>
+        <br />
+        <strong>Live Demo:</strong>
+        <a href="https://695530919980f4b106c4df2d--endocrine-react-app.netlify.app/" target="_blank">
+          Netlify Link
+        </a>
+      </p>
     </div>
+
+    <!-- Project 2 -->
+    <div class="card">
+      <h3>Construction Invoice Web Application</h3>
+
+      <p>
+        A real-world invoice generation web application built using
+        <strong>React</strong>, designed for practical use in construction and
+        glass-related businesses.
+      </p>
+
+      <ul>
+        <li>Supports both <strong>square-feet based pricing</strong> and <strong>fixed-amount billing</strong></li>
+        <li>Includes detailed glass specifications (type and thickness)</li>
+        <li>Automatically calculates totals while keeping dimensions visible</li>
+        <li>Clean, print-ready invoice format for day-to-day business use</li>
+      </ul>
+
+      <p>
+        Working on this project helped me understand how real business
+        requirements translate into application logic, calculations, and UI
+        decisions beyond typical demo projects.
+      </p>
+
+      <p>
+        <strong>Tech Stack:</strong> React, JavaScript, HTML, CSS
+      </p>
+
+      <p>
+        <strong>Live Demo:</strong>
+        <a href="https://69561ad82bdf20f32a7ff757--invoice-app-construction.netlify.app/" target="_blank">
+          Netlify Link
+        </a>
+        <br />
+        <strong>GitHub:</strong>
+        <a href="https://github.com/tia-345/invoice-app" target="_blank">
+          Repository Link
+        </a>
+      </p>
+    </div>
+
   </section>
 
   <!-- CONTACT -->
@@ -173,10 +219,16 @@
     <h2>Contact</h2>
     <div class="card">
       <p>
-        GitHub: <a href="https://github.com/tia-345" target="_blank">github.com/tia-345</a>
+        GitHub:
+        <a href="https://github.com/tia-345" target="_blank">
+          github.com/tia-345
+        </a>
       </p>
       <p>
-        LinkedIn: <a href="https://www.linkedin.com/in/tia-moncy-001020342" target="_blank">LinkedIn Profile</a>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/tia-moncy-001020342" target="_blank">
+          LinkedIn Profile
+        </a>
       </p>
     </div>
   </section>
