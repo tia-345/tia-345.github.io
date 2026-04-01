@@ -1,309 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Open Graph / Preview -->
-  <meta property="og:image" content="thumbnail.png">
-  <meta property="og:title" content="Tia Moncy | Portfolio">
-  <meta property="og:description" content="BCA student building real-world web projects and learning programming.">
+<title>Tia Moncy | Portfolio</title>
 
-  <title>Tia Moncy | Portfolio</title>
+<style>
 
-  <style>
-    /* ---- Black & Pink Theme ---- */
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: black;
-      color: pink;
-      line-height: 1.6;
-      text-align: center;
-      padding: 20px;
-    }
+/* ===== BACKGROUND + SPARKS ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #fff5f8, #fff);
+  color: #333;
+  overflow-x: hidden;
+}
 
-    header {
-      padding: 50px 20px;
-    }
+/* Floating spark container */
+#spark-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+/* Individual spark */
+.spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: gold;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: float 6s linear infinite;
+}
 
-    header p {
-      font-size: 1.1rem;
-    }
+@keyframes float {
+  from {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-10vh) scale(1);
+    opacity: 1;
+  }
+}
 
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeIn 1.5s ease;
+}
 
-    h2 {
-      border-bottom: 2px solid pink;
-      padding-bottom: 5px;
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      color: pink;
-    }
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid gold;
+  box-shadow: 0 0 20px rgba(255,182,193,0.6);
+}
 
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
-      text-align: left;
-      max-width: 650px;
-      margin: 0 auto 20px auto;
-    }
+header h1 {
+  font-size: 2.8rem;
+  color: #ff4da6;
+}
 
-    .card {
-      background: #111;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 25px;
-    }
+header p {
+  color: #555;
+}
 
-    a {
-      color: pink;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* ===== SECTIONS ===== */
+section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  animation: fadeUp 1s ease;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+h2 {
+  color: #ff4da6;
+  border-bottom: 2px solid gold;
+  display: inline-block;
+  padding-bottom: 5px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #e5e5e5;
-    }
+/* ===== CARDS ===== */
+.card {
+  background: white;
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255,182,193,0.4);
+  transition: all 0.3s ease;
+}
 
-    img {
-      margin-top: 20px;
-      border-radius: 50%;
-    }
-  </style>
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(255,182,193,0.7);
+}
+
+a {
+  color: #ff4da6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.highlight {
+  color: gold;
+  font-weight: bold;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Hi, I’m Tia Moncy 👋</h1>
-    <p>BCA 2nd Year Student | Rajagiri College of Social Sciences</p>
-    <img src="mypic.png" alt="Tia Moncy" width="200">
-  </header>
+<!-- SPARKS -->
+<div id="spark-container"></div>
 
-  <!-- ABOUT -->
-  <section>
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        I am a BCA second-year student with a growing interest in applying
-        computer science concepts to real-world problems.
-        I am currently building my foundation in programming, web development,
-        and problem-solving through hands-on projects.
-      </p>
-    </div>
-  </section>
+<header>
+  <img src="mypic.png" alt="Tia Moncy" class="profile-pic">
+  <h1>Hi, I’m Tia Moncy ✨</h1>
+  <p>BCA Student | Full Stack Developer</p>
+</header>
 
-  <!-- SKILLS -->
-  <section>
-    <h2>Skills</h2>
-    <div class="card">
-      <ul>
-        <li>C</li>
-        <li>Python</li>
-        <li>Java (Basics)</li>
-        <li>HTML, CSS, JavaScript</li>
-        <li>React (Basics)</li>
-        <li>Git & GitHub</li>
-        <li>Data Analysis & Visualization</li>
-        <li>Machine Learning (Basics)</li>
-      </ul>
-    </div>
-  </section>
+<section>
+<h2>About Me</h2>
+<div class="card">
+  I am a BCA student passionate about building real-world web applications using modern technologies.
+  I enjoy solving practical problems through full-stack development and continuously improving my skills.
+</div>
+</section>
 
-  <!-- CURRENTLY LEARNING -->
-  <section>
-    <h2>Currently Learning</h2>
-    <div class="card">
-      <ul>
-        <li>Data Structures & Algorithms</li>
-        <li>Web Development</li>
-        <li>Backend fundamentals</li>
-        <li>Real-world applications using Python</li>
-      </ul>
-    </div>
-  </section>
+<section>
+<h2>Skills</h2>
+<div class="card">
+<ul>
+<li>JavaScript, React.js, Node.js</li>
+<li>HTML, CSS</li>
+<li>MongoDB</li>
+<li>Python (Data Analysis Basics)</li>
+<li>Git & GitHub</li>
+</ul>
+</div>
+</section>
 
-  <!-- PROJECTS -->
-  <section>
-    <h2>Projects</h2>
+<section>
+<h2>Projects</h2>
 
-    <!-- Project 1 -->
-    <div class="card">
-      <h3>Endocrine System Educational Website</h3>
-      <p>
-        A frontend educational web project built using
-        <strong>HTML, CSS, and React</strong>,
-        focused on explaining the human endocrine system in a clear and
-        student-friendly way.
-      </p>
+<div class="card">
+<h3>✨ ClockIn – Employee Attendance & Payroll System</h3>
+<p>
+Full-stack application for attendance tracking and payroll management with role-based authentication.
+</p>
+<ul>
+<li>Digital attendance system</li>
+<li>Payroll dashboard</li>
+<li>Supports <span class="highlight">20 employees + 1 admin</span></li>
+</ul>
+<p>
+🔗 <a href="https://employee-attendance-payroll-9eir.vercel.app/">Live Demo</a><br>
+💻 <a href="https://github.com/tia-345/employee-attendance-payroll">GitHub</a>
+</p>
+</div>
 
-      <ul>
-        <li>Topic-wise pages for major endocrine glands</li>
-        <li>Clean and structured UI for easy learning</li>
-        <li>Interactive quiz feature for self-assessment</li>
-      </ul>
+<div class="card">
+<h3>Endocrine System Website</h3>
+<p>Educational platform with structured learning and quizzes.</p>
+</div>
 
-      <p>
-        <strong>GitHub:</strong>
-        <a href="https://github.com/tia-345/endocrine-react-app" target="_blank">
-          Repository Link
-        </a>
-        <br />
-        <strong>Live Demo:</strong>
-        <a href="https://695530919980f4b106c4df2d--endocrine-react-app.netlify.app/" target="_blank">
-          Netlify Link
-        </a>
-      </p>
-    </div>
+<div class="card">
+<h3>Invoice Web App</h3>
+<p>Automated billing system for construction use.</p>
+</div>
 
-    <!-- Project 2 -->
-    <div class="card">
-      <h3>Construction Invoice Web Application</h3>
+<div class="card">
+<h3>Netflix Data Dashboard</h3>
+<p>ML-powered data visualization dashboard.</p>
+</div>
 
-      <p>
-        A real-world invoice generation web application built using
-        <strong>React</strong>, designed for practical use in construction and
-        glass-related businesses.
-      </p>
+<div class="card">
+<h3>Attendance Planner</h3>
+<p>What-if based attendance prediction system.</p>
+</div>
 
-      <ul>
-        <li>Supports square-feet based pricing and fixed-amount billing</li>
-        <li>Includes detailed glass specifications</li>
-        <li>Automatically calculates totals</li>
-        <li>Print-ready invoice format</li>
-      </ul>
+</section>
 
-      <p>
-        <strong>Tech Stack:</strong> React, JavaScript, HTML, CSS
-      </p>
+<section>
+<h2>Contact</h2>
+<div class="card">
+<p>GitHub: <a href="https://github.com/tia-345">github.com/tia-345</a></p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/tia-moncy-001020342">Profile</a></p>
+</div>
+</section>
 
-      <p>
-        <strong>Live Demo:</strong>
-        <a href="https://69561ad82bdf20f32a7ff757--invoice-app-construction.netlify.app/" target="_blank">
-          Netlify Link
-        </a>
-        <br />
-        <strong>GitHub:</strong>
-        <a href="https://github.com/tia-345/invoice-app" target="_blank">
-          Repository Link
-        </a>
-      </p>
-    </div>
+<footer>
+© 2026 Tia Moncy ✨
+</footer>
 
-    <!-- Project 3 -->
-    <div class="card">
-      <h3>Netflix Data Analysis & Machine Learning Dashboard</h3>
+<script>
+// Create floating golden sparks
+const container = document.getElementById("spark-container");
 
-      <p>
-        An end-to-end data analytics and machine learning project built using
-        <strong>Python and Streamlit</strong>, focused on analyzing Netflix
-        Movies and TV Shows data and presenting insights through an interactive
-        dashboard.
-      </p>
+for (let i = 0; i < 40; i++) {
+  let spark = document.createElement("div");
+  spark.className = "spark";
+  
+  spark.style.left = Math.random() * 100 + "vw";
+  spark.style.animationDuration = (3 + Math.random() * 5) + "s";
+  spark.style.opacity = Math.random();
 
-      <ul>
-        <li>Performed exploratory data analysis with 20+ insights</li>
-        <li>Interactive dashboard with filters for type, genre, and year</li>
-        <li>Visualized trends by genre, country, rating, and release year</li>
-        <li>Trained a machine learning model to predict Movie vs TV Show</li>
-        <li>Deployed the application live using Streamlit Cloud</li>
-      </ul>
-
-      <p>
-        <strong>Tech Stack:</strong>
-        Python, Pandas, Matplotlib, Seaborn, Scikit-learn, Streamlit
-      </p>
-
-      <p>
-        <strong>Live App:</strong>
-        <a href="https://netflix-data-analysis-dashboard-4wpmgnqok7xyayyrjv82at.streamlit.app/" target="_blank">
-          Streamlit Link
-        </a>
-        <br />
-        <strong>GitHub:</strong>
-        <a href="https://github.com/tia-345/netflix-data-analysis-dashboard" target="_blank">
-          Repository Link
-        </a>
-      </p>
-    </div>
-
-    <!-- Project 4 (NEW) -->
-    <div class="card">
-      <h3>Attendance Planner (What-If Based)</h3>
-
-      <p>
-        A React-based attendance planning web application designed to calculate
-        attendance realistically using a what-if driven approach instead of
-        static percentage checks.
-      </p>
-
-      <ul>
-        <li>Automatically calculates the minimum number of classes required to reach a target attendance</li>
-        <li>Supports what-if simulation to test attendance plans</li>
-        <li>Classifies plans into SAFE / RISK / DANGER zones</li>
-        <li>Focuses on correcting common logical flaws in attendance calculation</li>
-      </ul>
-
-      <p>
-        <strong>Tech Stack:</strong> React, Vite, JavaScript, HTML, CSS
-      </p>
-
-      <p>
-        <strong>Live Demo:</strong>
-        <a href="https://attendance-app-self.vercel.app/" target="_blank">
-          Vercel Link
-        </a>
-        <br />
-        <strong>GitHub:</strong>
-        <a href="https://github.com/tia-345/Attendance-App" target="_blank">
-          Repository Link
-        </a>
-      </p>
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-  <section>
-    <h2>Contact</h2>
-    <div class="card">
-      <p>
-        GitHub:
-        <a href="https://github.com/tia-345" target="_blank">
-          github.com/tia-345
-        </a>
-      </p>
-      <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/tia-moncy-001020342" target="_blank">
-          LinkedIn Profile
-        </a>
-      </p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Tia Moncy | Built with HTML & CSS
-  </footer>
+  container.appendChild(spark);
+}
+</script>
 
 </body>
 </html>
