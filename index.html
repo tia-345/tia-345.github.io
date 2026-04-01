@@ -12,12 +12,11 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffffff, #ffe6f0);
+  background: linear-gradient(135deg, #fff, #ffe6f0);
   color: #333;
-  overflow-x: hidden;
 }
 
-/* GOLDEN PARTICLES */
+/* ✨ PARTICLES */
 canvas {
   position: fixed;
   top: 0;
@@ -25,64 +24,68 @@ canvas {
   z-index: -1;
 }
 
-/* HEADER */
-header {
+/* LAYOUT */
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 30%;
+  background: linear-gradient(180deg, #ff4da6, #ff99cc);
+  color: white;
+  padding: 30px;
   text-align: center;
-  padding: 80px 20px;
 }
 
-header h1 {
-  font-size: 3rem;
-  background: linear-gradient(90deg, #ff4da6, gold);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-header p {
-  font-size: 1.2rem;
-}
-
-header img {
-  width: 180px;
+.sidebar img {
+  width: 140px;
   border-radius: 50%;
-  margin-top: 20px;
-  box-shadow: 0 0 25px gold;
-  transition: 0.3s;
+  box-shadow: 0 0 20px gold;
+  margin-bottom: 15px;
 }
 
-header img:hover {
-  transform: scale(1.08);
+.sidebar h1 {
+  margin: 10px 0;
 }
 
-/* SECTION */
-section {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
+.sidebar p {
+  font-size: 0.9rem;
 }
 
-/* HEADINGS */
-h2 {
+/* MAIN */
+.main {
+  width: 70%;
+  padding: 40px;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
   color: #ff4da6;
   border-bottom: 2px solid gold;
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 /* CARD */
 .card {
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(12px);
-  border-radius: 15px;
-  padding: 25px;
-  margin-bottom: 25px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  transition: 0.4s;
+  background: rgba(255,255,255,0.8);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 10px 35px rgba(255, 192, 203, 0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255,105,180,0.4);
 }
 
 /* LINKS */
@@ -96,28 +99,26 @@ a:hover {
   color: gold;
 }
 
-/* LIST */
-ul {
-  padding-left: 20px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-}
-
-/* FADE ANIMATION */
+/* ANIMATION */
 .fade {
   opacity: 0;
-  transform: translateY(25px);
+  transform: translateY(20px);
   transition: 1s;
 }
 
 .fade.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .container {
+    flex-direction: column;
+  }
+  .sidebar, .main {
+    width: 100%;
+  }
 }
 </style>
 </head>
@@ -126,119 +127,107 @@ footer {
 
 <canvas id="spark"></canvas>
 
-<header class="fade">
-<h1>Tia Moncy</h1>
-<p>Full Stack Developer | Data Analyst | ML Enthusiast</p>
-<img src="mypic.png" alt="Tia">
-</header>
+<div class="container">
 
-<section class="fade">
-<h2>About Me</h2>
+<!-- SIDEBAR -->
+<div class="sidebar fade">
+<img src="mypic.png">
+
+<h1>Tia Moncy</h1>
+<p>Full Stack Developer<br>Data Analyst | ML Enthusiast</p>
+
+<hr>
+
+<h3>Contact</h3>
+<p>📧 tiamoncy345@gmail.com</p>
+<p><a href="https://github.com/tia-345">GitHub</a></p>
+<p><a href="https://www.linkedin.com/in/tia-moncy-001020342">LinkedIn</a></p>
+
+<hr>
+
+<h3>Skills</h3>
+<p>Python, Java, C</p>
+<p>React, Node.js</p>
+<p>MongoDB, MySQL</p>
+<p>Git, Streamlit</p>
+
+<hr>
+
+<h3>Certifications</h3>
+<p>IBM Data Visualization</p>
+<p>IBM Data Analysis</p>
+<p>Python for Data Science</p>
+<p>Cisco Cybersecurity</p>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="section fade">
+<h2>Profile</h2>
 <div class="card">
 <p>
-Aspiring Full Stack Developer and Data Analyst with hands-on experience in building and deploying real-world applications using modern technologies. Skilled in problem-solving, data analysis, and creating scalable solutions. Passionate about leveraging programming and data-driven approaches to solve practical challenges. Continuously learning and improving through projects and real-world implementations. Seeking opportunities to contribute, grow, and gain industry experience.
+Aspiring Full Stack Developer and Data Analyst with strong experience in building real-world applications using modern technologies. Passionate about solving problems through data and scalable systems. Continuously learning and applying new technologies through hands-on projects. Seeking opportunities to grow and contribute in a professional environment.
 </p>
 </div>
-</section>
-
-<section class="fade">
-<h2>Skills</h2>
-<div class="card">
-<p><b>Languages:</b> Python, Java, C</p>
-<p><b>Web:</b> HTML, CSS, JavaScript, React, Node.js</p>
-<p><b>Database:</b> MongoDB, MySQL</p>
-<p><b>Tools:</b> Git, Streamlit, Netlify, Vercel</p>
 </div>
-</section>
 
-<section class="fade">
+<div class="section fade">
 <h2>Projects</h2>
 
 <div class="card">
 <h3>ClockIn – Attendance & Payroll System</h3>
 <p>
-A full-stack MERN application designed to streamline employee attendance tracking and payroll management in a centralized system. It features secure role-based authentication for administrators and employees, ensuring controlled data access. The system includes a digital punch-in/punch-out mechanism for accurate attendance recording. It also provides automated payroll calculations with detailed salary breakdowns. A dynamic dashboard offers real-time insights into attendance trends and salary data. This project enhanced my understanding of backend architecture, API integration, and deployment workflows.
+A full-stack MERN application designed to streamline employee attendance tracking and payroll management. Includes role-based authentication, digital attendance system, and automated payroll processing. Provides real-time dashboards for insights. Built with secure API integration and deployed using modern platforms. Strengthened my backend and full-stack skills.
 </p>
-<p>
-<a href="https://lnkd.in/gd5njARn" target="_blank">Live Demo</a> |
-<a href="https://lnkd.in/g9ykyU2i" target="_blank">GitHub</a>
-</p>
+<a href="https://lnkd.in/gd5njARn">Live</a> |
+<a href="https://lnkd.in/g9ykyU2i">GitHub</a>
 </div>
 
 <div class="card">
-<h3>Netflix Data Analysis & ML Dashboard</h3>
+<h3>Netflix Data Analysis Dashboard</h3>
 <p>
-An end-to-end data analytics and machine learning project focused on extracting insights from Netflix movies and TV shows dataset. Performed extensive exploratory data analysis to identify trends across genres, countries, and release years. Built an interactive dashboard using Streamlit to allow users to filter and visualize data dynamically. Implemented machine learning models to classify content types and improve predictive analysis. Visual storytelling techniques were used to present over 20 meaningful insights. This project strengthened my skills in data analysis, visualization, and applied machine learning.
+Analyzed Netflix dataset to extract meaningful insights and trends. Built interactive dashboard with Streamlit. Applied machine learning techniques for prediction. Focused on data storytelling and visualization. Improved data analysis and ML skills significantly.
 </p>
-<p>
-<a href="https://netflix-data-analysis-dashboard-4wpmgnqok7xyayyrjv82at.streamlit.app/" target="_blank">Live</a> |
-<a href="https://github.com/tia-345/netflix-data-analysis-dashboard" target="_blank">GitHub</a>
-</p>
+<a href="https://netflix-data-analysis-dashboard-4wpmgnqok7xyayyrjv82at.streamlit.app/">Live</a> |
+<a href="https://github.com/tia-345/netflix-data-analysis-dashboard">GitHub</a>
 </div>
 
 <div class="card">
 <h3>Attendance Planner</h3>
 <p>
-A React-based web application designed to help students plan and manage their attendance strategically. Unlike traditional trackers, it uses a what-if simulation approach to predict future attendance scenarios. The system calculates the minimum number of classes required to achieve a target percentage. It categorizes attendance status into SAFE, RISK, and DANGER zones for better decision-making. The interface updates dynamically based on user inputs, providing real-time feedback. This project improved my frontend logic building and problem-solving skills.
+Smart React application to track and predict attendance using simulations. Helps users achieve target attendance with real-time updates. Categorizes risk levels. Improves planning and decision-making. Built with strong frontend logic.
 </p>
-<p>
-<a href="https://attendance-app-self.vercel.app/" target="_blank">Live</a> |
-<a href="https://github.com/tia-345/Attendance-App" target="_blank">GitHub</a>
-</p>
+<a href="https://attendance-app-self.vercel.app/">Live</a> |
+<a href="https://github.com/tia-345/Attendance-App">GitHub</a>
 </div>
 
 <div class="card">
-<h3>Construction Invoice Web Application</h3>
+<h3>Invoice Web App</h3>
 <p>
-A practical web application developed using React to automate invoice generation for construction and glass-related businesses. The system supports both square-feet based pricing and fixed-rate billing methods. It allows users to input detailed material specifications and automatically calculates totals. The application generates clean, print-ready invoices for professional use. It reduces manual errors and improves operational efficiency in billing processes. This project helped me understand real-world business logic and frontend application design.
+Developed a billing system for construction use. Supports automatic calculations and invoice generation. Reduces errors and improves efficiency. Designed for real-world use. Strengthened frontend development skills.
 </p>
-<p>
-<a href="https://invoice-app-construction.netlify.app/" target="_blank">Live</a> |
-<a href="https://github.com/tia-345/invoice-app" target="_blank">GitHub</a>
-</p>
+<a href="https://invoice-app-construction.netlify.app/">Live</a> |
+<a href="https://github.com/tia-345/invoice-app">GitHub</a>
 </div>
 
 <div class="card">
-<h3>Endocrine System Educational Website</h3>
+<h3>Endocrine System Website</h3>
 <p>
-A frontend educational web application built using HTML, CSS, and React to explain the human endocrine system. The platform presents structured information about major glands in a simple and engaging format. It includes an interactive quiz feature to reinforce learning and self-assessment. The UI is designed to be clean, responsive, and accessible for students. The project focuses on simplifying complex biological concepts through visual presentation. This improved my skills in UI/UX design and educational content structuring.
+Educational React application explaining biological concepts. Includes structured UI and quiz system. Designed for better learning experience. Focused on accessibility and clean design.
 </p>
-<p>
-<a href="https://endocrineapp.netlify.app/" target="_blank">Live</a> |
-<a href="https://github.com/tia-345/endocrine-react-app" target="_blank">GitHub</a>
-</p>
+<a href="https://endocrineapp.netlify.app/">Live</a> |
+<a href="https://github.com/tia-345/endocrine-react-app">GitHub</a>
 </div>
 
-</section>
-
-<section class="fade">
-<h2>Certifications</h2>
-<div class="card">
-<ul>
-<li>IBM - Data Visualization Using Python</li>
-<li>IBM - Data Analysis Using Python</li>
-<li>IBM - Python for Data Science</li>
-<li>IBM - Data Science Foundations</li>
-<li>Cisco - Introduction to Cybersecurity</li>
-</ul>
 </div>
-</section>
 
-<section class="fade">
-<h2>Contact</h2>
-<div class="card">
-<p>Email: tiamoncy345@gmail.com</p>
-<p><a href="https://github.com/tia-345" target="_blank">GitHub</a></p>
-<p><a href="https://www.linkedin.com/in/tia-moncy-001020342" target="_blank">LinkedIn</a></p>
 </div>
-</section>
-
-<footer>
-© 2026 Tia Moncy | Portfolio
-</footer>
+</div>
 
 <script>
-// FADE EFFECT
+// FADE
 const faders = document.querySelectorAll('.fade');
 window.addEventListener('scroll', () => {
   faders.forEach(el => {
@@ -249,20 +238,19 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// GOLDEN PARTICLES
+// PARTICLES
 const canvas = document.getElementById("spark");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particles = [];
-
-for(let i=0;i<120;i++){
+for(let i=0;i<100;i++){
   particles.push({
     x: Math.random()*canvas.width,
     y: Math.random()*canvas.height,
     r: Math.random()*2,
-    d: Math.random()*1.5
+    d: Math.random()*1
   });
 }
 
@@ -282,7 +270,6 @@ function update(){
     p.y += p.d;
     if(p.y > canvas.height){
       p.y = 0;
-      p.x = Math.random()*canvas.width;
     }
   });
 }
