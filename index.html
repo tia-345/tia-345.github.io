@@ -12,11 +12,11 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #fff, #ffe6f0);
+  background: linear-gradient(135deg, #ffffff, #fdf1f6);
   color: #333;
 }
 
-/* ✨ PARTICLES */
+/* PARTICLES */
 canvas {
   position: fixed;
   top: 0;
@@ -29,14 +29,13 @@ canvas {
   display: flex;
   max-width: 1200px;
   margin: auto;
-  min-height: 100vh;
 }
 
 /* SIDEBAR */
 .sidebar {
   width: 30%;
-  background: linear-gradient(180deg, #ff4da6, #ff99cc);
-  color: white;
+  background: linear-gradient(180deg, #f8c8dc, #f3d9e6);
+  color: #333;
   padding: 30px;
   text-align: center;
 }
@@ -44,16 +43,23 @@ canvas {
 .sidebar img {
   width: 140px;
   border-radius: 50%;
-  box-shadow: 0 0 20px gold;
+  box-shadow: 0 0 15px rgba(255, 192, 203, 0.6);
   margin-bottom: 15px;
 }
 
 .sidebar h1 {
   margin: 10px 0;
+  color: #c94f7c;
 }
 
-.sidebar p {
-  font-size: 0.9rem;
+/* LINKS FIXED */
+.sidebar a {
+  color: #7a2c4b;
+  font-weight: 600;
+}
+
+.sidebar a:hover {
+  color: #c94f7c;
 }
 
 /* MAIN */
@@ -68,38 +74,38 @@ canvas {
 }
 
 .section h2 {
-  color: #ff4da6;
-  border-bottom: 2px solid gold;
+  color: #c94f7c;
+  border-bottom: 2px solid #e8c3d3;
   display: inline-block;
-  margin-bottom: 15px;
 }
 
 /* CARD */
 .card {
-  background: rgba(255,255,255,0.8);
+  background: #ffffff;
   padding: 20px;
   border-radius: 12px;
-  margin-bottom: 20px;
+  margin-top: 15px;
   transition: 0.3s;
+  border: 1px solid #f0dce4;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(255,105,180,0.4);
+  box-shadow: 0 10px 25px rgba(200, 100, 150, 0.15);
 }
 
 /* LINKS */
 a {
-  color: #ff4da6;
-  font-weight: bold;
+  color: #c94f7c;
   text-decoration: none;
+  font-weight: 600;
 }
 
 a:hover {
-  color: gold;
+  color: #a63d63;
 }
 
-/* ANIMATION */
+/* FADE */
 .fade {
   opacity: 0;
   transform: translateY(20px);
@@ -139,9 +145,10 @@ a:hover {
 <hr>
 
 <h3>Contact</h3>
+<p>📞 +91 9633808377</p>
 <p>📧 tiamoncy345@gmail.com</p>
-<p><a href="https://github.com/tia-345">GitHub</a></p>
-<p><a href="https://www.linkedin.com/in/tia-moncy-001020342">LinkedIn</a></p>
+<p><a href="https://github.com/tia-345" target="_blank">GitHub</a></p>
+<p><a href="https://www.linkedin.com/in/tia-moncy-001020342" target="_blank">LinkedIn</a></p>
 
 <hr>
 
@@ -179,16 +186,16 @@ Aspiring Full Stack Developer and Data Analyst with strong experience in buildin
 <div class="card">
 <h3>ClockIn – Attendance & Payroll System</h3>
 <p>
-A full-stack MERN application designed to streamline employee attendance tracking and payroll management. Includes role-based authentication, digital attendance system, and automated payroll processing. Provides real-time dashboards for insights. Built with secure API integration and deployed using modern platforms. Strengthened my backend and full-stack skills.
+A full-stack MERN application designed to streamline employee attendance tracking and payroll management in a centralized system. It features secure role-based authentication for administrators and employees, ensuring controlled data access. The system includes a digital punch-in/punch-out mechanism for accurate attendance recording. It also provides automated payroll calculations with detailed salary breakdowns. A dynamic dashboard offers real-time insights into attendance trends and salary data.
 </p>
 <a href="https://lnkd.in/gd5njARn">Live</a> |
 <a href="https://lnkd.in/g9ykyU2i">GitHub</a>
 </div>
 
 <div class="card">
-<h3>Netflix Data Analysis Dashboard</h3>
+<h3>Netflix Data Analysis & ML Dashboard</h3>
 <p>
-Analyzed Netflix dataset to extract meaningful insights and trends. Built interactive dashboard with Streamlit. Applied machine learning techniques for prediction. Focused on data storytelling and visualization. Improved data analysis and ML skills significantly.
+An end-to-end data analytics and machine learning project focused on extracting insights from Netflix dataset. Performed extensive exploratory data analysis to identify trends across genres, countries, and release years. Built an interactive dashboard using Streamlit to allow dynamic filtering. Implemented machine learning models for prediction. Strengthened data analysis and visualization skills.
 </p>
 <a href="https://netflix-data-analysis-dashboard-4wpmgnqok7xyayyrjv82at.streamlit.app/">Live</a> |
 <a href="https://github.com/tia-345/netflix-data-analysis-dashboard">GitHub</a>
@@ -197,16 +204,16 @@ Analyzed Netflix dataset to extract meaningful insights and trends. Built intera
 <div class="card">
 <h3>Attendance Planner</h3>
 <p>
-Smart React application to track and predict attendance using simulations. Helps users achieve target attendance with real-time updates. Categorizes risk levels. Improves planning and decision-making. Built with strong frontend logic.
+A React-based web application designed to help students manage attendance strategically. Uses a what-if simulation approach to predict future scenarios. Calculates required classes to reach target percentage. Categorizes status into SAFE, RISK, and DANGER zones. Provides real-time updates.
 </p>
 <a href="https://attendance-app-self.vercel.app/">Live</a> |
 <a href="https://github.com/tia-345/Attendance-App">GitHub</a>
 </div>
 
 <div class="card">
-<h3>Invoice Web App</h3>
+<h3>Invoice Web Application</h3>
 <p>
-Developed a billing system for construction use. Supports automatic calculations and invoice generation. Reduces errors and improves efficiency. Designed for real-world use. Strengthened frontend development skills.
+A web application built using React to automate invoice generation. Supports both square-feet and fixed pricing. Calculates totals automatically and generates print-ready invoices. Reduces manual errors. Designed for real-world business use.
 </p>
 <a href="https://invoice-app-construction.netlify.app/">Live</a> |
 <a href="https://github.com/tia-345/invoice-app">GitHub</a>
@@ -215,7 +222,7 @@ Developed a billing system for construction use. Supports automatic calculations
 <div class="card">
 <h3>Endocrine System Website</h3>
 <p>
-Educational React application explaining biological concepts. Includes structured UI and quiz system. Designed for better learning experience. Focused on accessibility and clean design.
+An educational web application built using HTML, CSS, and React. Explains endocrine system topics in a structured format. Includes interactive quizzes. Designed with a clean and responsive UI. Focuses on simplifying complex concepts.
 </p>
 <a href="https://endocrineapp.netlify.app/">Live</a> |
 <a href="https://github.com/tia-345/endocrine-react-app">GitHub</a>
@@ -245,18 +252,18 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particles = [];
-for(let i=0;i<100;i++){
+for(let i=0;i<80;i++){
   particles.push({
     x: Math.random()*canvas.width,
     y: Math.random()*canvas.height,
     r: Math.random()*2,
-    d: Math.random()*1
+    d: Math.random()*0.8
   });
 }
 
 function draw(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle="gold";
+  ctx.fillStyle="rgba(255, 215, 0, 0.6)";
   particles.forEach(p=>{
     ctx.beginPath();
     ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
