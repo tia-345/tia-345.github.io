@@ -9,279 +9,252 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* BACKGROUND */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffffff, #fdf1f6);
-  color: #333;
+  color: #f8e8ff;
+  background: linear-gradient(-45deg, #2b1f2f, #3a2532, #1f1b2e);
+  background-size: 400% 400%;
+  animation: bg 10s ease infinite;
+}
+@keyframes bg {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
-/* PARTICLES */
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-/* LAYOUT */
-.container {
+/* HERO */
+.hero {
   display: flex;
-  max-width: 1200px;
-  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 8%;
+}
+.hero h1 {font-size:40px;}
+.gradient {
+  background: linear-gradient(90deg,#f9a8d4,#c4b5fd);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.avatar {
+  width:180px;
+  border-radius:20px;
+  box-shadow:0 0 25px rgba(255,192,203,0.5);
 }
 
-/* SIDEBAR */
-.sidebar {
-  width: 30%;
-  background: linear-gradient(180deg, #f8c8dc, #f3d9e6);
-  color: #333;
-  padding: 30px;
-  text-align: center;
-}
-
-.sidebar img {
-  width: 140px;
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 192, 203, 0.6);
-  margin-bottom: 15px;
-}
-
-.sidebar h1 {
-  margin: 10px 0;
-  color: #c94f7c;
-}
-
-/* LINKS FIXED */
-.sidebar a {
-  color: #7a2c4b;
-  font-weight: 600;
-}
-
-.sidebar a:hover {
-  color: #c94f7c;
-}
-
-/* MAIN */
-.main {
-  width: 70%;
-  padding: 40px;
-}
-
-/* SECTIONS */
+/* SECTION */
 .section {
-  margin-bottom: 40px;
+  padding:60px 8%;
+  text-align:center;
 }
+.strip {background:rgba(0,0,0,0.25);}
 
-.section h2 {
-  color: #c94f7c;
-  border-bottom: 2px solid #e8c3d3;
-  display: inline-block;
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
 /* CARD */
 .card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  margin-top: 15px;
-  transition: 0.3s;
-  border: 1px solid #f0dce4;
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:15px;
+  backdrop-filter:blur(12px);
+  transition:.3s;
 }
-
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(200, 100, 150, 0.15);
+  transform:translateY(-8px);
+  box-shadow:0 0 25px rgba(255,192,203,0.3);
 }
 
-/* LINKS */
-a {
-  color: #c94f7c;
-  text-decoration: none;
-  font-weight: 600;
+/* SKILLS */
+.skill {
+  display:inline-block;
+  margin:6px;
+  padding:8px 15px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
 }
 
-a:hover {
-  color: #a63d63;
+/* BUTTON */
+.btn {
+  display:inline-block;
+  margin:6px;
+  padding:6px 12px;
+  border-radius:20px;
+  background:linear-gradient(90deg,#f9a8d4,#c4b5fd);
+  color:white;
+  text-decoration:none;
 }
 
 /* FADE */
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 1s;
+.fade {opacity:0;transform:translateY(30px);transition:1s;}
+.fade.show {opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:768px){
+  .hero{flex-direction:column;text-align:center;}
+  .grid{grid-template-columns:1fr;}
+  .hero h1{font-size:26px;}
 }
 
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* MOBILE */
-@media(max-width:900px){
-  .container {
-    flex-direction: column;
-  }
-  .sidebar, .main {
-    width: 100%;
-  }
-}
 </style>
 </head>
 
 <body>
 
-<canvas id="spark"></canvas>
-
-<div class="container">
-
-<!-- SIDEBAR -->
-<div class="sidebar fade">
-<img src="mypic.png">
-
-<h1>Tia Moncy</h1>
-<p>Full Stack Developer<br>Data Analyst | ML Enthusiast</p>
-
-<hr>
-
-<h3>Contact</h3>
-<p>📞 +91 9633808377</p>
-<p>📧 tiamoncy345@gmail.com</p>
-<p><a href="https://github.com/tia-345" target="_blank">GitHub</a></p>
-<p><a href="https://www.linkedin.com/in/tia-moncy-001020342" target="_blank">LinkedIn</a></p>
-
-<hr>
-
-<h3>Skills</h3>
-<p>Python, Java, C</p>
-<p>React, Node.js</p>
-<p>MongoDB, MySQL</p>
-<p>Git, Streamlit</p>
-
-<hr>
-
-<h3>Certifications</h3>
-<p>IBM Data Visualization</p>
-<p>IBM Data Analysis</p>
-<p>Python for Data Science</p>
-<p>Cisco Cybersecurity</p>
-
-</div>
-
-<!-- MAIN -->
-<div class="main">
-
-<div class="section fade">
-<h2>Profile</h2>
-<div class="card">
+<!-- HERO -->
+<div class="hero fade">
+<div>
+<h1>Hi, I'm <span class="gradient">Tia Moncy</span></h1>
 <p>
-Aspiring Full Stack Developer and Data Analyst with strong experience in building real-world applications using modern technologies. Passionate about solving problems through data and scalable systems. Continuously learning and applying new technologies through hands-on projects. Seeking opportunities to grow and contribute in a professional environment.
+Full Stack Developer & Data Analyst specializing in scalable web applications and machine learning systems. Passionate about building impactful, real-world solutions using modern technologies and Generative AI.
 </p>
 </div>
+<img src="mypic.png" class="avatar">
 </div>
 
+<!-- ABOUT -->
+<div class="section strip fade">
+<h2>About Me</h2>
+<p style="max-width:600px;margin:auto;">
+I am a BCA student with hands-on experience in MERN stack development and data science. I have built multiple real-world applications including dashboards, automation tools, and machine learning systems. I enjoy solving problems through data and continuously learning emerging technologies.
+</p>
+</div>
+
+<!-- SKILLS -->
 <div class="section fade">
+<h2>Skills</h2>
+<div>
+<span class="skill">Python</span>
+<span class="skill">Java</span>
+<span class="skill">C</span>
+<span class="skill">React</span>
+<span class="skill">Node.js</span>
+<span class="skill">Express</span>
+<span class="skill">MongoDB</span>
+<span class="skill">MySQL</span>
+<span class="skill">Pandas</span>
+<span class="skill">NumPy</span>
+<span class="skill">Scikit-learn</span>
+<span class="skill">Streamlit</span>
+</div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section strip fade">
 <h2>Projects</h2>
 
+<div class="grid">
+
 <div class="card">
-<h3>ClockIn – Attendance & Payroll System</h3>
-<p>
-A full-stack MERN application designed to streamline employee attendance tracking and payroll management in a centralized system. It features secure role-based authentication for administrators and employees, ensuring controlled data access. The system includes a digital punch-in/punch-out mechanism for accurate attendance recording. It also provides automated payroll calculations with detailed salary breakdowns. A dynamic dashboard offers real-time insights into attendance trends and salary data.
-</p>
-<a href="https://lnkd.in/gd5njARn">Live</a> |
-<a href="https://lnkd.in/g9ykyU2i">GitHub</a>
+<h4>ClockIn System</h4>
+<p>Full-stack MERN application for employee attendance and payroll with role-based authentication, automated salary processing, and dashboard insights.</p>
+<a href="https://lnkd.in/gd5njARn" class="btn">Live</a>
+<a href="https://lnkd.in/g9ykyU2i" class="btn">GitHub</a>
 </div>
 
 <div class="card">
-<h3>Netflix Data Analysis & ML Dashboard</h3>
-<p>
-An end-to-end data analytics and machine learning project focused on extracting insights from Netflix dataset. Performed extensive exploratory data analysis to identify trends across genres, countries, and release years. Built an interactive dashboard using Streamlit to allow dynamic filtering. Implemented machine learning models for prediction. Strengthened data analysis and visualization skills.
-</p>
-<a href="https://netflix-data-analysis-dashboard-4wpmgnqok7xyayyrjv82at.streamlit.app/">Live</a> |
-<a href="https://github.com/tia-345/netflix-data-analysis-dashboard">GitHub</a>
+<h4>Netflix ML Dashboard</h4>
+<p>Performed exploratory data analysis and built machine learning models with an interactive Streamlit dashboard to visualize trends and predictions.</p>
+<a href="https://netflix-data-analysis-dashboard-4wpmgnqok7xyayyrjv82at.streamlit.app/" class="btn">Live</a>
+<a href="https://github.com/tia-345/netflix-data-analysis-dashboard" class="btn">GitHub</a>
 </div>
 
 <div class="card">
-<h3>Attendance Planner</h3>
-<p>
-A React-based web application designed to help students manage attendance strategically. Uses a what-if simulation approach to predict future scenarios. Calculates required classes to reach target percentage. Categorizes status into SAFE, RISK, and DANGER zones. Provides real-time updates.
-</p>
-<a href="https://attendance-app-self.vercel.app/">Live</a> |
-<a href="https://github.com/tia-345/Attendance-App">GitHub</a>
+<h4>Attendance Planner</h4>
+<p>React-based application that predicts attendance scenarios and helps students maintain required percentages through real-time calculations.</p>
+<a href="https://attendance-app-self.vercel.app/" class="btn">Live</a>
+<a href="https://github.com/tia-345/Attendance-App" class="btn">GitHub</a>
 </div>
 
 <div class="card">
-<h3>Invoice Web Application</h3>
-<p>
-A web application built using React to automate invoice generation. Supports both square-feet and fixed pricing. Calculates totals automatically and generates print-ready invoices. Reduces manual errors. Designed for real-world business use.
-</p>
-<a href="https://invoice-app-construction.netlify.app/">Live</a> |
-<a href="https://github.com/tia-345/invoice-app">GitHub</a>
+<h4>Invoice Web App</h4>
+<p>Automated invoice generation system with real-time calculations and print-ready output for business use.</p>
+<a href="https://invoice-app-construction.netlify.app/" class="btn">Live</a>
+<a href="https://github.com/tia-345/invoice-app" class="btn">GitHub</a>
 </div>
 
 <div class="card">
-<h3>Endocrine System Website</h3>
-<p>
-An educational web application built using HTML, CSS, and React. Explains endocrine system topics in a structured format. Includes interactive quizzes. Designed with a clean and responsive UI. Focuses on simplifying complex concepts.
-</p>
-<a href="https://endocrineapp.netlify.app/">Live</a> |
-<a href="https://github.com/tia-345/endocrine-react-app">GitHub</a>
+<h4>Endocrine Website</h4>
+<p>Interactive educational platform designed to simplify endocrine system concepts using structured UI and quizzes.</p>
+<a href="https://endocrineapp.netlify.app/" class="btn">Live</a>
+<a href="https://github.com/tia-345/endocrine-react-app" class="btn">GitHub</a>
 </div>
 
+</div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section fade">
+<h2>Machine Learning Training</h2>
+<div class="card" style="max-width:600px;margin:auto;">
+<p>
+Completed a 7-day intensive Machine Learning program by Grand Thornton. Worked on supervised and unsupervised learning techniques including regression, classification, clustering, and PCA. Built real-world projects such as Fake News Detection and Customer Segmentation, and applied SHAP for model interpretability and optimization.
+</p>
+</div>
+</div>
+
+<!-- CERTIFICATIONS -->
+<div class="section strip fade">
+<h2>Certifications</h2>
+
+<div class="grid">
+<div class="card">Getting Started with Generative AI – IBM</div>
+<div class="card">Data Visualization Using Python – IBM</div>
+<div class="card">Data Analysis Using Python – IBM</div>
+<div class="card">Python for Data Science – IBM</div>
+<div class="card">Data Science Foundations – IBM</div>
+<div class="card">Introduction to Cybersecurity – Cisco</div>
+</div>
+
+</div>
+
+<!-- CONTACT -->
+<div class="section fade">
+<h2>Let’s Connect 🌸</h2>
+
+<div class="grid">
+
+<div class="card"><h4>📞 Phone</h4><p>+91 9633808377</p></div>
+
+<div class="card"><h4>📧 Email</h4><p>tiamoncy345@gmail.com</p></div>
+
+<div class="card">
+<h4>💼 LinkedIn</h4>
+<a href="https://www.linkedin.com/in/tia-moncy-001020342" class="btn">Profile</a>
+</div>
+
+<div class="card">
+<h4>💻 GitHub</h4>
+<a href="https://github.com/tia-345" class="btn">Visit</a>
+</div>
+
+<div class="card">
+<h4>📸 Instagram</h4>
+<p>@_tia_moncy_</p>
+<a href="https://www.instagram.com/_tia_moncy_/" class="btn">Follow</a>
 </div>
 
 </div>
 </div>
 
 <script>
-// FADE
 const faders = document.querySelectorAll('.fade');
-window.addEventListener('scroll', () => {
-  faders.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
+window.addEventListener('scroll', ()=>{
+  faders.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight - 100){
       el.classList.add('show');
     }
   });
 });
-
-// PARTICLES
-const canvas = document.getElementById("spark");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-for(let i=0;i<80;i++){
-  particles.push({
-    x: Math.random()*canvas.width,
-    y: Math.random()*canvas.height,
-    r: Math.random()*2,
-    d: Math.random()*0.8
-  });
-}
-
-function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle="rgba(255, 215, 0, 0.6)";
-  particles.forEach(p=>{
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fill();
-  });
-  update();
-}
-
-function update(){
-  particles.forEach(p=>{
-    p.y += p.d;
-    if(p.y > canvas.height){
-      p.y = 0;
-    }
-  });
-}
-
-setInterval(draw,30);
 </script>
 
 </body>
